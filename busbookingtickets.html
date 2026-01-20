@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bus Booking System</title>
+<link rel="stylesheet" href="busbookingtickets_style.css">
+</head>
+<body>
+  <h1>🚌 Bus Booking System</h1>
+<!---search bus--->
+<div class="box">
+    <h2>Search Bus</h2>
+    <input id="source" placeholder="Source">
+    <input id="destination" placeholder="Destination">
+    <input type="date">
+    <input type="time">
+    <button onclick="searchBus()">Search Bus</button>
+</div>
+<!-----bus list---->
+<div class="box" id="busList"></div>
+<!-- Seat selection -->
+<div class="container">
+  <div id="seatBox" class="box">
+    <h2>Select Seats</h2>
+    <div id="seatLayout" class="seat-layout"></div>
+  <button onclick="goPassenger()">Next: Passenger Details</button>
+</div>
+<!--passenger Details-->
+<div id="passengerBox"></div>
+<!--payment -->
+<div id="paymentBox">
+  <h2>Payment</h2>
+  <!-----coupons----->
+  <input id="couponCode" placeholder="Enter Coupon Code">
+  <button onclick="applyCoupon()">Apply Coupon</button>
+  <p id="couponMsg"></p>
+  <label for="paymentMethod">Select Payment Method:</label>
+  <select id="paymentMethod" onchange="showPayment()">
+    <option value="">-- Select --</option>
+    <option value="upi">UPI</option>
+    <option value="card">Card</option>
+    <option value="net">Net Banking</option>
+  </select>
+  <div id="paymentDetails"></div>
+  <button onclick="confirmBooking()">Confirm Booking</button>
+</div>
+<!--confirmation-->
+<div id="confirmBox"></div>
+<!--admin login -->
+<div id="adminLoginBox">
+  <h2>Admin Login</h2>
+  <input id="adminUser" placeholder="Username">
+  <input id="adminPass" placeholder="Password" type="password">
+  <button onclick="adminLogin()">Login</button>
+</div>
+<!--admin panel -->
+<div id="adminPanel">
+  <h2>Admin Panel</h2>
+  <input id="busName" placeholder="Bus Name">
+  <input id="busFare" placeholder="Fare" type="number">
+  <input id="busTime" placeholder="Time">
+  <input id="busImg" placeholder="Bus Image URL">
+  <button onclick="addBus()">Add Bus</button>
+  <div id="adminBusList"></div>
+  <button onclick="logoutAdmin()">Logout</button>
+</div>
+<script src="busbookingtickets_script.js"></script>
+</body>
+</html>
